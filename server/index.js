@@ -4,22 +4,31 @@ const express = require('express');
 const myRouter = require("./router/router");
 const db = require("./DB");
 const app = express();
-const zobi = require("cors");
+const port = process.env.PORT || 8080
+const path = require('path')
+const cors = require("cors");
+const { read } = require('fs');
+const { join } = require('path');
 const mongoUrl = process.env.MONGOURL;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(zobi());
+app.use(cors());
 db.on("error", () => {
   console.log("error");
 });
 
-app.get("/", () => {
-  console.log("you conected to the server");
-});
-app.listen(8999, () => {
-  console.log("server is up on port 8999");
+
+app.listen(port, () => {
+  console.log(`server is up on port ${port}`);
 });
 app.use("/test", myRouter);
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.join(__dirname,'../client/build')));
+  app.get('*',(req,res)=>{
+    read.sendFile(path.join(__dirname,'../client/build','index.html'))
+  })
+}
 // create connection
 
 // mongodb.connect(mongoUrl, (err, con) => {
