@@ -23,10 +23,11 @@ function App() {
   return (
     <div className="App">
       {/* <Form/> */}
-      <h1>{post.firstname}</h1>
+      {/* <h1>{post.firstname}</h1>
       <p>{post.lastName}</p> 
 
-      <button onClick ={createPost}>create post</button>
+      <button onClick ={createPost}>create post</button> */}
+      <h1>hello world</h1>
     </div>
   );
 }
