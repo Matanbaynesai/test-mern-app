@@ -20,7 +20,7 @@ db.on("error", () => {
 app.listen(port, () => {
   console.log(`server is up on port ${port}`);
 });
-app.use("/test", myRouter);
+app.use("api/test", myRouter);
 
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static(path.join(__dirname,'../client/build')));
