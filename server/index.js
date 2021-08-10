@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require('express');
 // const mongodb = require("mongodb").MongoClient;
 // const mongo = require("mongodb");
@@ -28,6 +30,9 @@ if(process.env.NODE_ENV === 'production'){
     read.sendFile(path.join(__dirname,'../client/build','index.html'))
   })
 }
+
+
+
 // create connection
 
 // mongodb.connect(mongoUrl, (err, con) => {
