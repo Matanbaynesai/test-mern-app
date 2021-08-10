@@ -3,7 +3,7 @@ const myRouter = express.Router();
 const model = require("../controllers/controller");
 
 myRouter.get("/", model.getAllUsers);
-myRouter.post("/", model.createDocument);
+myRouter.post("/create", model.createDocument);
 // myRouter.put("/", model.updateDocument);
 // myRouter.delete("/", model.deleteDocument);
 

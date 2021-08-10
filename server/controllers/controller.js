@@ -1,11 +1,7 @@
 const studentModel = require('../model/Model')
 
 
-const document = [
-    {firstname:"hana",lastName:"amara",age: 34, email:"hana@gmail.com",date:Date},
-    {firstname:"matan",lastName:"bayneasi",age: 25, email:"matan@gmail.com",date:Date},
-    {firstname:"lior",lastName:"solomon",age: 25, email:"lior@gmail.com",date:Date}, 
-]
+
 async function getAllUsers(req, res) {
     try {
         await studentModel.find({}, (err, result) => {
