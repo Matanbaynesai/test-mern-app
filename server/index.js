@@ -4,12 +4,11 @@ const express = require('express');
 const myRouter = require("./router/router");
 const db = require("./DB");
 const app = express();
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8999
 const path = require('path')
 const cors = require("cors");
 const { read } = require('fs');
 const { join } = require('path');
-const mongoUrl = process.env.MONGOURL;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
